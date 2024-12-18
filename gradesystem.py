@@ -15,7 +15,7 @@ def sum(marks):
     for i in range(len(marks)):
         total += marks[i]
     return total
-
+#you have to take student name and marks from user dynamically. Do it and update the code
 students = [
     {"name": "Ram", "marks": [75, 85, 95, 58, 80]},
     {"name": "Sam", "marks": [68, 86, 77, 68, 69]},
