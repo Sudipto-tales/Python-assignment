@@ -15,14 +15,16 @@ def sum(marks):
     for i in range(len(marks)):
         total += marks[i]
     return total
-
-students = [
-    {"name": "Ram", "marks": [75, 85, 95, 58, 80]},
-    {"name": "Sam", "marks": [68, 86, 77, 68, 69]},
-    {"name": "Laxman", "marks": [78, 85, 95, 65, 79]},
-    {"name": "Bharat", "marks": [90, 95, 86, 78, 88]}
-]
-
+#you have to take student name and marks from user dynamically. Do it and update the code
+#taking User input 
+students = []
+num_students = int(input("Enter the number of students: "))
+for _ in range(num_students):
+    name = input("Enter the name of the student: ")
+    marks_input = input(f"Enter marks for {name} separated by spaces: ")
+    marks = list(map(int, marks_input.split()))
+    students.append({"name": name, "marks": marks})
+    
 for student in students:
     total_marks = sum(student["marks"])
     percentage = (total_marks / (len(student["marks"]) * 100)) * 100
