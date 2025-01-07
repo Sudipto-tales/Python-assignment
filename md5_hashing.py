@@ -84,16 +84,23 @@ def md5_transform(A, B, C, D, block, s):
 
     return A, B, C, D
 
+def md5(message):
+    preprocessed_message = msg_padding(message)
+    A, B, C, D, s = initialize_md5_variables()
 
-message = input("Enter Your Password: ")
-preprocessed_message = msg_padding(message)
-A, B, C, D, s = initialize_md5_variables()
-for i in range(0, len(preprocessed_message), 64):
-    block = preprocessed_message[i:i + 64]
-    A, B, C, D = md5_transform(A, B, C, D, block, s)
-final_hash = (A.to_bytes(4, byteorder='little') +
-              B.to_bytes(4, byteorder='little') +
-              C.to_bytes(4, byteorder='little') +
-              D.to_bytes(4, byteorder='little')).hex()
+    for i in range(0, len(preprocessed_message), 64):
+        block = preprocessed_message[i:i + 64]
+        A, B, C, D = md5_transform(A, B, C, D, block, s)
 
-print(f"MD5 Hash: {final_hash}")
+    final_hash = (A.to_bytes(4, byteorder='little') +
+                  B.to_bytes(4, byteorder='little') +
+                  C.to_bytes(4, byteorder='little') +
+                  D.to_bytes(4, byteorder='little')).hex()
+    return final_hash
+
+# Testing with "2003"
+#hash_result = md5("2003")
+#print("MD5 hash of '2003':", hash_result)
+
+
+
