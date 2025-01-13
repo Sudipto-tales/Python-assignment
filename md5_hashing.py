@@ -1,4 +1,5 @@
-import random
+import time
+import os
 
 def msg_padding(message):
     message_bytes = bytearray(message, 'utf-8')
@@ -101,12 +102,7 @@ def md5(message):
     return final_hash 
 
 # Testing with "2003"
-alpha = 'ABCCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-random_string = ''
-for i in range(0,len(alpha),2):
-        random_string += random.choice(alpha)
-        
-hash_result = md5("2003") + random_string
+hash_result = md5("2003") + f"{os.getpid()}" + f"{time.time()}"
 print("MD5 hash of '2003':", hash_result)
 
 
