@@ -1,3 +1,5 @@
+import random
+
 def msg_padding(message):
     message_bytes = bytearray(message, 'utf-8')
     
@@ -96,11 +98,16 @@ def md5(message):
                   B.to_bytes(4, byteorder='little') +
                   C.to_bytes(4, byteorder='little') +
                   D.to_bytes(4, byteorder='little')).hex()
-    return final_hash
+    return final_hash 
 
 # Testing with "2003"
-#hash_result = md5("2003")
-#print("MD5 hash of '2003':", hash_result)
+alpha = 'ABCCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+random_string = ''
+for i in range(0,len(alpha),2):
+        random_string += random.choice(alpha)
+        
+hash_result = md5("2003") + random_string
+print("MD5 hash of '2003':", hash_result)
 
 
 
