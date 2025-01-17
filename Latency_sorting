@@ -1,0 +1,14 @@
+def compile():
+   nonsorted_array = []
+   sorted_array = []
+   nonsorted_array = list(map(int,input("Enter a array: ").split()))
+
+   while nonsorted_array:
+      temp = min(nonsorted_array)
+      sorted_array.append(temp)
+      nonsorted_array.remove(temp)
+     
+   return sorted_array     
+
+sorted_array = compile()
+print(f"Sorted array: {sorted_array}")
