@@ -1,3 +1,8 @@
+# Projects
+1. MD5 Algorithm
+
+---
+
 # MD5 Algorithm Implementation
 
 This project demonstrates the implementation of the MD5 hashing algorithm in Python. MD5 is a cryptographic hash function that produces a 128-bit hash value from an input message. Although MD5 is no longer recommended for cryptographic security due to vulnerabilities, it remains widely used for purposes like checksums and non-critical data verification.
@@ -175,3 +180,6 @@ The generated hash key is different for every systems
 hash_result = md5("2003") + f"{os.getpid()}" + f"{time.time()}"
 print("MD5 hash of '2003':", hash_result)
 ```
+---
+<h1>Feedback</h1>
+- Use comments to describe your code
